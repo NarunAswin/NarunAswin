@@ -50,5 +50,5 @@ graph TD
 - [x] [task-05-sweets-catalog-and-reviews-components](./tasks/task-05-sweets-catalog-and-reviews-components.md) — Create Sweets Catalog Grid and Testimonials Components
 
 ### Batch 3
-- [ ] [task-06-assemble-sweets-page](./tasks/task-06-assemble-sweets-page.md) — Assemble Sweets Landing Page in app/page.tsx
+- [x] [task-06-assemble-sweets-page](./tasks/task-06-assemble-sweets-page.md) — Assemble Sweets Landing Page in app/page.tsx
 
