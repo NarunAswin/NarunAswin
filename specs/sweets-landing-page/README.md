@@ -45,9 +45,9 @@ graph TD
 - [x] [task-02-layout-and-branding](./tasks/task-02-layout-and-branding.md) — Update Root Layout and Shop Metadata
 
 ### Batch 2
-- [ ] [task-03-navbar-and-footer-components](./tasks/task-03-navbar-and-footer-components.md) — Create Navbar and Footer Components
-- [ ] [task-04-hero-and-features-components](./tasks/task-04-hero-and-features-components.md) — Create Hero and Why-Us Features Components
-- [ ] [task-05-sweets-catalog-and-reviews-components](./tasks/task-05-sweets-catalog-and-reviews-components.md) — Create Sweets Catalog Grid and Testimonials Components
+- [x] [task-03-navbar-and-footer-components](./tasks/task-03-navbar-and-footer-components.md) — Create Navbar and Footer Components
+- [x] [task-04-hero-and-features-components](./tasks/task-04-hero-and-features-components.md) — Create Hero and Why-Us Features Components
+- [x] [task-05-sweets-catalog-and-reviews-components](./tasks/task-05-sweets-catalog-and-reviews-components.md) — Create Sweets Catalog Grid and Testimonials Components
 
 ### Batch 3
 - [ ] [task-06-assemble-sweets-page](./tasks/task-06-assemble-sweets-page.md) — Assemble Sweets Landing Page in app/page.tsx
