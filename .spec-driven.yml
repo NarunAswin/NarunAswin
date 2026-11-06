@@ -1,0 +1,32 @@
+# .spec-driven.yml — project rules for the spec-driven-dev skills.
+# Written by spec-setup from what it detected + what you confirmed. Edit freely, or re-run
+# spec-setup to update it. Every spec-* skill reads this before doing anything else.
+version: 1
+
+# single     — one git repo, one app
+# monorepo   — one git repo, several apps/packages (pnpm/npm/yarn workspaces, Turborepo, Nx, Go/Cargo workspaces…)
+# multi-repo — several separate git repos that change together (this file sits in their shared parent folder)
+layout: single
+tracker:
+  type: none                    # jira | github | linear | none
+  key: ""                       # ticket key prefix (jira/linear); omit for github/none
+  url: ""                       # site/org/repo URL, if any
+
+git:
+  remote: origin
+  base_branch: default          # branch work is cut from; "default" = the remote's default branch
+  pr_target: default            # branch PRs go into; usually the same as base_branch
+  branch_name: "{type}/{slug}"  # placeholders: {ticket} {slug} {type}; e.g. "{ticket}" for bare STP-123
+  commit_style: freeform        # conventional (feat: …) | ticket (STP-123: …) | freeform
+
+# Leave a command empty if the project doesn't have it; skills skip what's empty.
+commands:
+  install: "npm install"
+  lint: "npm run lint"
+  typecheck: "npx tsc --noEmit"
+  test: ""
+  build: "npm run build"
+  dev: "npm run dev"            # how spec-verify starts the app
+  dev_url: "http://localhost:3000" # where it answers, e.g. http://localhost:3000
+
+specs_dir: specs                # where specs/<feature>/ folders go (relative to this file)

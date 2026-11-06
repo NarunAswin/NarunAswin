@@ -1,0 +1,45 @@
+# .spec-driven.yml — project rules for the spec-driven-dev skills.
+# Written by spec-setup from what it detected + what you confirmed. Edit freely, or re-run
+# spec-setup to update it. Every spec-* skill reads this before doing anything else.
+version: 1
+
+# single     — one git repo, one app
+# monorepo   — one git repo, several apps/packages (pnpm/npm/yarn workspaces, Turborepo, Nx, Go/Cargo workspaces…)
+# multi-repo — several separate git repos that change together (this file sits in their shared parent folder)
+layout: single
+
+# The repos (multi-repo) or packages (monorepo) the pipeline may touch. Omit for `single`.
+# Each entry can override the top-level git/commands settings.
+# repos:
+#   - path: api                 # relative to this file
+#     role: REST API + workers  # one line: what lives here, so investigations know where to look
+#     git:
+#       base_branch: staging
+#     commands:
+#       test: npm test
+#   - path: web
+#     role: React frontend
+
+tracker:
+  type: jira                    # jira | github | linear | none
+  key: STP                      # ticket key prefix (jira/linear); omit for github/none
+  url: https://example.atlassian.net   # site/org/repo URL, if any
+
+git:
+  remote: origin
+  base_branch: default          # branch work is cut from; "default" = the remote's default branch
+  pr_target: default            # branch PRs go into; usually the same as base_branch
+  branch_name: "{type}/{ticket}-{slug}"   # placeholders: {ticket} {slug} {type}; e.g. "{ticket}" for bare STP-123
+  commit_style: conventional    # conventional (feat: …) | ticket (STP-123: …) | freeform
+
+# Leave a command empty if the project doesn't have it; skills skip what's empty.
+commands:
+  install: ""
+  lint: ""
+  typecheck: ""
+  test: ""
+  build: ""
+  dev: ""                       # how spec-verify starts the app
+  dev_url: ""                   # where it answers, e.g. http://localhost:3000
+
+specs_dir: specs                # where specs/<feature>/ folders go (relative to this file)
